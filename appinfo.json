@@ -17,11 +17,11 @@
         "weather_w2": 38
     },
     "capabilities": [
-        "configurable",
-        "location"
+        "location",
+        "configurable"
     ],
     "companyName": "Don Krause",
-    "longName": "JWorldTime",
+    "longName": "WorldTime",
     "projectType": "native",
     "resources": {
         "media": [
@@ -84,7 +84,7 @@
         ]
     },
     "sdkVersion": "3",
-    "shortName": "JWT",
+    "shortName": "WT",
     "targetPlatforms": [
         "aplite",
         "basalt"
