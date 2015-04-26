@@ -1,0 +1,98 @@
+{
+    "appKeys": {
+        "background_w0": 4,
+        "background_w1": 20,
+        "background_w2": 36,
+        "city_w0": 3,
+        "city_w1": 19,
+        "city_w2": 35,
+        "offset_w0": 2,
+        "offset_w1": 18,
+        "offset_w2": 34,
+        "timedisp_w0": 5,
+        "timedisp_w1": 21,
+        "timedisp_w2": 37,
+        "weather_w0": 6,
+        "weather_w1": 22,
+        "weather_w2": 38
+    },
+    "capabilities": [
+        "configurable",
+        "location"
+    ],
+    "companyName": "Don Krause",
+    "longName": "JWorldTime",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "images/worldmapicon.png",
+                "menuIcon": true,
+                "name": "ICON",
+                "type": "png"
+            },
+            {
+                "file": "images/Fog.png",
+                "name": "WEATHER_FOG",
+                "type": "png"
+            },
+            {
+                "file": "images/Snow.png",
+                "name": "WEATHER_SNOW",
+                "type": "png"
+            },
+            {
+                "file": "images/Wind.png",
+                "name": "WEATHER_WIND",
+                "type": "png"
+            },
+            {
+                "file": "images/PartlyCloudyNight.png",
+                "name": "WEATHER_PARTLY_CLOUDY_NIGHT",
+                "type": "png"
+            },
+            {
+                "file": "images/PartlyCloudyDay.png",
+                "name": "WEATHER_PARTLY_CLOUDY_DAY",
+                "type": "png"
+            },
+            {
+                "file": "images/Cloudy.png",
+                "name": "WEATHER_CLOUDY",
+                "type": "png"
+            },
+            {
+                "file": "images/Rain.png",
+                "name": "WEATHER_RAIN",
+                "type": "png"
+            },
+            {
+                "file": "images/ClearNight.png",
+                "name": "WEATHER_CLEAR_NIGHT",
+                "type": "png"
+            },
+            {
+                "file": "images/ClearDay.png",
+                "name": "WEATHER_CLEAR_DAY",
+                "type": "png"
+            },
+            {
+                "file": "images/Unknown.png",
+                "name": "WEATHER_UNKNOWN",
+                "type": "png"
+            }
+        ]
+    },
+    "sdkVersion": "3",
+    "shortName": "JWT",
+    "targetPlatforms": [
+        "aplite",
+        "basalt"
+    ],
+    "uuid": "d16b2900-1175-41d1-8ca1-b283fd7fa6fa",
+    "versionCode": 3,
+    "versionLabel": "3.0",
+    "watchapp": {
+        "watchface": false
+    }
+}
