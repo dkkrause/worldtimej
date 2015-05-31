@@ -151,8 +151,8 @@ void update_background(WatchFace *wf, int32_t local_gmt_offset) {
     switch (wf->background) {
         case BACKGROUND_DARK:
 #ifdef PBL_COLOR
-            text_color = GColorYellow;
-            bg_color = GColorBlue;
+            text_color = GColorChromeYellow;
+            bg_color = GColorBlueMoon;
 #else
             text_color = GColorWhite;
             bg_color = GColorBlack;
@@ -160,8 +160,8 @@ void update_background(WatchFace *wf, int32_t local_gmt_offset) {
             break;
         case BACKGROUND_LIGHT:
 #ifdef PBL_COLOR
-            text_color = GColorBlue;
-            bg_color = GColorYellow;
+            text_color = GColorBlueMoon;
+            bg_color = GColorChromeYellow;
 #else
             text_color = GColorBlack;
             bg_color = GColorWhite;
@@ -171,16 +171,16 @@ void update_background(WatchFace *wf, int32_t local_gmt_offset) {
             if (sunisup(local_time, wf->sunrise_hour, wf->sunrise_min,
                         wf->sunset_hour, wf->sunset_min)) {
 #ifdef PBL_COLOR
-                text_color = GColorBlue;
-                bg_color = GColorYellow;
+                text_color = GColorBlueMoon;
+                bg_color = GColorChromeYellow;
 #else
                 text_color = GColorBlack;
                 bg_color = GColorWhite;
 #endif
             } else {
 #ifdef PBL_COLOR
-                text_color = GColorYellow;
-                bg_color = GColorBlue;
+                text_color = GColorChromeYellow;
+                bg_color = GColorBlueMoon;
 #else
                 text_color = GColorWhite;
                 bg_color = GColorBlack;
@@ -189,8 +189,8 @@ void update_background(WatchFace *wf, int32_t local_gmt_offset) {
             break;
         default:
 #ifdef PBL_COLOR
-            text_color = GColorYellow;
-            bg_color = GColorBlue;
+            text_color = GColorChromeYellow;
+            bg_color = GColorBlueMoon;
 #else
             text_color = GColorWhite;
             bg_color = GColorBlack;
@@ -210,7 +210,7 @@ void update_background(WatchFace *wf, int32_t local_gmt_offset) {
     
     // update each of the weather icon spaces
     for ( int j = 0; j < MAX_WEATHER_DAYS; j++ ) {
-        if (GColorEq(bg_color, GColorWhite)) {
+        if (gcolor_equal(bg_color, GColorWhite)) {
             bitmap_layer_set_compositing_mode(wf->bitmap_weather_layer[j], GCompOpAssign);
         } else {
             bitmap_layer_set_compositing_mode(wf->bitmap_weather_layer[j], GCompOpAssignInverted);
@@ -498,20 +498,29 @@ void statuswindow_load () {
     status.version = text_layer_create(GRect(0,0,144,40));
     snprintf(status.version_text, sizeof(status.version_text), versionfmt, version);
     text_layer_set_text(status.version, status.version_text);
+#ifdef PBL_COLOR
+    text_layer_set_text_color(status.version, GColorBlueMoon);
+    text_layer_set_background_color(status.version, GColorChromeYellow);
+#else
     text_layer_set_text_color(status.version, GColorWhite);
     text_layer_set_background_color(status.version, GColorClear);
+#endif
     text_layer_set_font(status.version, small_bold_font);
     text_layer_set_text_alignment(status.version, GTextAlignmentCenter);
     layer_add_child(window_get_root_layer(statuswindow), (Layer *)status.version);
     layer_mark_dirty((Layer *)status.version);
     
-
     // Format battery percentage text
     status.batterystatus = text_layer_create(GRect(0, 40, 144, 32));
     snprintf(status.batt_text, sizeof(status.batt_text), battfmt, batteryUpdate.charge_percent);
     text_layer_set_text(status.batterystatus, status.batt_text);
+#ifdef PBL_COLOR
+    text_layer_set_text_color(status.batterystatus, GColorBlueMoon);
+    text_layer_set_background_color(status.batterystatus, GColorChromeYellow);
+#else
     text_layer_set_text_color(status.batterystatus, GColorWhite);
     text_layer_set_background_color(status.batterystatus, GColorClear);
+#endif
     text_layer_set_font(status.batterystatus, med_bold_font);
     text_layer_set_text_alignment(status.batterystatus, GTextAlignmentCenter);
     layer_add_child(window_get_root_layer(statuswindow), (Layer *)status.batterystatus);
@@ -523,8 +532,13 @@ void statuswindow_load () {
         local_time = localtime(&watchfaces[i].last_weather_update);
         strftime(status.last_text[i], sizeof(status.last_text[i]), lastfmt, local_time);
         text_layer_set_text(status.weatherupdate[i], status.last_text[i]);
-        text_layer_set_text_color(status.weatherupdate[i], GColorWhite);
-        text_layer_set_background_color(status.weatherupdate[i], GColorClear);
+#ifdef PBL_COLOR
+    text_layer_set_text_color(status.weatherupdate[i], GColorBlueMoon);
+    text_layer_set_background_color(status.weatherupdate[i], GColorChromeYellow);
+#else
+    text_layer_set_text_color(status.weatherupdate[i], GColorWhite);
+    text_layer_set_background_color(status.weatherupdate[i], GColorClear);
+#endif
         text_layer_set_font(status.weatherupdate[i], small_bold_font);
         text_layer_set_text_alignment(status.weatherupdate[i], GTextAlignmentCenter);
         layer_add_child(window_get_root_layer(statuswindow), (Layer *)status.weatherupdate[i]);
@@ -732,7 +746,11 @@ void init() {
     
     // Initialize status window, but don't populate unless it's requested via tap
     statuswindow = window_create();
+#ifdef PBL_COLOR
+    window_set_background_color(statuswindow, GColorChromeYellow);
+#else
     window_set_background_color(statuswindow, GColorBlack);
+#endif
     window_set_window_handlers(statuswindow, (WindowHandlers) {
         .load = statuswindow_load,
         .unload = statuswindow_unload

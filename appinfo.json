@@ -90,7 +90,6 @@
         "basalt"
     ],
     "uuid": "d16b2900-1175-41d1-8ca1-b283fd7fa6fa",
-    "versionCode": 3,
     "versionLabel": "3.0",
     "watchapp": {
         "watchface": false
