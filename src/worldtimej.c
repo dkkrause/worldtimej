@@ -647,7 +647,7 @@ void init() {
     mainwindow = window_create();
     window_set_background_color(mainwindow, GColorBlack);
 #ifdef PBL_PLATFORM_APLITE
-  window_set_fullscreen(mainwindow, true);
+//  window_set_fullscreen(mainwindow, true);
 #endif
   
     for ( int i = 0; i < MAX_WATCH_FACES; i++) {
@@ -672,7 +672,7 @@ void init() {
         watchfaces[i].window = window_create();  
         window_set_background_color(watchfaces[i].window, GColorBlack);
 #ifdef PBL_PLATFORM_APLITE
-        window_set_fullscreen(watchfaces[i].window, true);
+//        window_set_fullscreen(watchfaces[i].window, true);
 #endif
         window_set_click_config_provider(watchfaces[i].window,
                                          (ClickConfigProvider) watchface_click_config_provider);

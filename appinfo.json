@@ -21,6 +21,7 @@
         "configurable"
     ],
     "companyName": "Don Krause",
+    "enableMultiJS": false,
     "longName": "WorldTime",
     "projectType": "native",
     "resources": {
@@ -29,57 +30,57 @@
                 "file": "images/worldmapicon.png",
                 "menuIcon": true,
                 "name": "ICON",
-                "type": "png"
+                "type": "bitmap"
             },
             {
                 "file": "images/Fog.png",
                 "name": "WEATHER_FOG",
-                "type": "png"
+                "type": "bitmap"
             },
             {
                 "file": "images/Snow.png",
                 "name": "WEATHER_SNOW",
-                "type": "png"
+                "type": "bitmap"
             },
             {
                 "file": "images/Wind.png",
                 "name": "WEATHER_WIND",
-                "type": "png"
+                "type": "bitmap"
             },
             {
                 "file": "images/PartlyCloudyNight.png",
                 "name": "WEATHER_PARTLY_CLOUDY_NIGHT",
-                "type": "png"
+                "type": "bitmap"
             },
             {
                 "file": "images/PartlyCloudyDay.png",
                 "name": "WEATHER_PARTLY_CLOUDY_DAY",
-                "type": "png"
+                "type": "bitmap"
             },
             {
                 "file": "images/Cloudy.png",
                 "name": "WEATHER_CLOUDY",
-                "type": "png"
+                "type": "bitmap"
             },
             {
                 "file": "images/Rain.png",
                 "name": "WEATHER_RAIN",
-                "type": "png"
+                "type": "bitmap"
             },
             {
                 "file": "images/ClearNight.png",
                 "name": "WEATHER_CLEAR_NIGHT",
-                "type": "png"
+                "type": "bitmap"
             },
             {
                 "file": "images/ClearDay.png",
                 "name": "WEATHER_CLEAR_DAY",
-                "type": "png"
+                "type": "bitmap"
             },
             {
                 "file": "images/Unknown.png",
                 "name": "WEATHER_UNKNOWN",
-                "type": "png"
+                "type": "bitmap"
             }
         ]
     },
